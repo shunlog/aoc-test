@@ -64,7 +64,7 @@ By providing the `test` argument,
 For example, if you're using a logger,
 you can disable it if the argument isn't given 
 to avoid wasting performance on formatting those logs.
-## Test cases
+### Test cases
 Your files should be named like this:
 ``` text
 Problem_directory
