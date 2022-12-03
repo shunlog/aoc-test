@@ -80,3 +80,25 @@ For tests, this is sorta the naming scheme:
 - for test input: `test*.in`
 - for expected output in part 1: `test*.1.out`
 - for expected output in part 2: `test*.2.out`
+
+For example, for [AOC 2022 day 3](https://adventofcode.com/2022/day/3), you would have the following test files:
+
+`test_1.in`
+``` text
+vJrwpWtwJgWrhcsFMMfFFhFp
+jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL
+PmmdzqPrVvPwwTWBwg
+wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn
+ttgJtRGJQctTZtZT
+CrZsJsPPZsGzwwsLwLmpwMDw
+```
+
+`test_1.1.out`
+``` text
+157
+```
+
+`test_1.2.out`
+``` text
+70
+```
