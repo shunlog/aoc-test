@@ -6,9 +6,9 @@ A simple program that checks your AOC solution against the provided test cases.
 Here are screenshots of running the program.
 Notice how the debug logs from [icecream](https://github.com/gruns/icecream) get printed too.
 
-[](./img/success.png)
+![](./img/success.png)
 
-[](./img/failed.png)
+![](./img/failed.png)
 
 ## How to
 
