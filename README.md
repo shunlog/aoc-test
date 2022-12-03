@@ -1,5 +1,8 @@
 # Advent of code tester
-A simple program that checks your AOC solution against the provided test cases.
+A simple program that checks your AOC solution written in python against provided test cases.
+
+Every AOC problem has a example inputs that you can use to inspect the execution of your program,
+but you can also write your own. This program automates checking your solution to the expected result for every test case in the directory. There are a few [requirements](#-requirements) you have to satisfy first for this to work.
 
 ## Example
 
@@ -11,6 +14,10 @@ Notice how the debug logs from [icecream](https://github.com/gruns/icecream) get
 ![](./img/failed.png)
 
 ## How to
+First, install it from [pypi](https://pypi.org/project/pytest-aoc/):
+``` shell
+pip install pytest-aoc
+```
 
 To run the tests, simply execute the command:
 ``` shell
@@ -24,9 +31,8 @@ aoct 2
 ```
 
 ## Requirements
-
-For this to work its magic, you must satisfy two requirements:
-1. Your solution takes input from `stdin` and outputs solution to `stdout`.
+For this program to work its magic, you must satisfy two requirements:
+1. Your solution script takes input from `stdin` and outputs solution to `stdout`.
 2. The test files are named according to a specific scheme.
 
 ### Solution template
