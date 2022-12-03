@@ -83,7 +83,7 @@ For tests, this is sorta the naming scheme:
 
 For example, for [AOC 2022 day 3](https://adventofcode.com/2022/day/3), you would have the following test files:
 
-`test_1.in`
+File `test_1.in`:
 ``` text
 vJrwpWtwJgWrhcsFMMfFFhFp
 jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL
@@ -93,12 +93,12 @@ ttgJtRGJQctTZtZT
 CrZsJsPPZsGzwwsLwLmpwMDw
 ```
 
-`test_1.1.out`
+File `test_1.1.out`:
 ``` text
 157
 ```
 
-`test_1.2.out`
+File `test_1.2.out`:
 ``` text
 70
 ```
