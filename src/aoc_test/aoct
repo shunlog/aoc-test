@@ -6,12 +6,15 @@ from termcolor import colored
 def solve(inp, part2=False):
     part = '1' if not part2 else '2'
     import subprocess
-    cp = subprocess.run(["./main.py", part],
-                        input=bytes(inp, 'utf-8'),
-                        capture_output=True)
-    return cp.stdout.decode('utf-8').strip()
+    p = subprocess.Popen(["./main.py", part],
+                         stderr = sys.stderr,
+                         stdin = subprocess.PIPE,
+                         stdout = subprocess.PIPE)
+    o, err = p.communicate(inp.encode('utf-8'))
+    return o.decode('utf-8').strip()
 
 def run_test(tname, inp, exp, part2):
+    print(f"Running {tname} for part {2 if part2 else 1}:")
     sol = solve(inp, part2)
     if str(sol) != exp:
         print(colored(f"Wrong on {tname}!", 'red'))
@@ -36,7 +39,10 @@ def run_tests(part2):
         run_test(tname, inp, exp, part2)
 
 def main(*argv):
-    run_tests('2' in argv[0])
+    if not '2' in argv[0]:
+        run_tests(False)
+    if not '1' in argv[0]:
+        run_tests(True)
 
 if __name__ == "__main__":
     main(sys.argv)
