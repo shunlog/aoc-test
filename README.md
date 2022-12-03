@@ -1,7 +1,7 @@
 # Advent of code tester
 A simple program that checks your AOC solution written in python against provided test cases.
 
-Testing your AOC solutions is tedious and time-consuming. This program automates this process by checking your solution to the expected result for every test case in the current directory. There are a few [requirements](#requirements) you have to satisfy first for this to work.
+Testing your AOC solutions is tedious and time-consuming. This program automates this process by comparing your solution to the expected result for every test case in the current directory. There are a few [requirements](#requirements) you have to satisfy first for this to work.
 
 ## Example
 Here is what the output looks like.
