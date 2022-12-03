@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name = "aoc_test",
-      version = "0.1",
+      version = "0.2",
       description = "Test your Advent of Code solutions",
       author='Balan Artiom',
       license='MIT',
