@@ -35,7 +35,7 @@ def run_tests(part2):
         try:
             exp = open(out_fn, 'r').read().strip()
         except:
-            print(f"No solution for {tname}, part {2 if part2 else 1}")
+            print(colored(f"No solution for {tname}, part {2 if part2 else 1}", 'red'))
             continue
         run_test(tname, inp, exp, part2)
 
