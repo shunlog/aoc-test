@@ -14,6 +14,7 @@ def solve(inp, part2=False):
     return o.decode('utf-8').strip()
 
 def run_test(tname, inp, exp, part2):
+    print("-"*30)
     print(f"Running {tname} for part {2 if part2 else 1}:")
     sol = solve(inp, part2)
     if str(sol) != exp:
