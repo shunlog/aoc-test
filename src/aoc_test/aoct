@@ -27,7 +27,7 @@ def run_test(tname, inp, exp, part2):
 
 def run_tests(part2):
     import glob
-    tests = list(glob.glob("test*.in"))
+    tests = list(glob.glob("*.in"))
     for in_fn in tests:
         inp = open(in_fn, 'r').read().strip()
         tname = in_fn.split('.')[0]

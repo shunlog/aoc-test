@@ -76,15 +76,18 @@ Problem_directory
 ├── main.py
 ├── test_1.1.out
 ├── test_1.2.out
-└── test_1.in
+├── test_1.in
 ├── test_2.2.out
-└── test_2.in
+├── test_2.in
+├── input.1.out
+├── input.2.out
+└── input.in
 ```
 
 For tests, this is sorta the naming scheme:
-- for test input: `test*.in`
-- for expected output in part 1: `test*.1.out`
-- for expected output in part 2: `test*.2.out`
+- for test input: `*.in`
+- for expected output in part 1: `*.1.out`
+- for expected output in part 2: `*.2.out`
 
 For example, for [AOC 2022 day 3](https://adventofcode.com/2022/day/3), you would have the following test files:
 
