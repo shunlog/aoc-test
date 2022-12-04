@@ -14,7 +14,7 @@ The faded out text is the debug logs from [icecream](https://github.com/gruns/ic
 ## How to
 First, install it from [pypi](https://pypi.org/project/pytest-aoc/):
 ``` shell
-pip install pytest-aoc
+pip install aoc-test
 ```
 
 To run the tests, simply execute the command in the directory with your solution and test cases:
@@ -28,8 +28,7 @@ aoct 1
 aoct 2
 ```
 
-If you want to filter the `stderr`, you can use the `--debug` flag which will propagate to your solution script where you can handle it.
-
+If you want to conditionally pipe from the `stderr` to the terminal, you can use the `--debug` flag which will propagate to your solution script where you can handle it.
 ``` shell
 aoct --debug 1
 ```
@@ -57,6 +56,7 @@ if __name__ == "__main__":
     
     # optional
     if not '--debug' in sys.argv:
+        # disable your logger
         ic.disable()
 
     if '2' not in sys.argv:
@@ -66,10 +66,10 @@ if __name__ == "__main__":
 ```
 
 Basically, `aoct` will invoke your solution script with two arguments: 
-problem part (`1` or `2`) and the argument `test`.
+problem part (`1` or `2`) and optionally the argument `--debug`.
 
-There is a `--debug` flag
-that allows you to optimize your own program when you want to run it on a big input.
+The `--debug` flag allows you to optimize your own program
+when you want to run it on a big input.
 For example, if you're using a logger,
 you can disable it for the big inputs
 by checking for `--debug` in the solution script,
