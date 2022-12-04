@@ -3,20 +3,20 @@
 import sys
 from termcolor import colored
 
-def solve(inp, part2=False):
+def solve(inp, part2, debug):
     part = '1' if not part2 else '2'
     import subprocess
-    p = subprocess.Popen(["./main.py", part],
+    p = subprocess.Popen(["./main.py", '--debug' if debug else '', part],
                          stderr = sys.stderr,
                          stdin = subprocess.PIPE,
                          stdout = subprocess.PIPE)
     o, err = p.communicate(inp.encode('utf-8'))
     return o.decode('utf-8').strip()
 
-def run_test(tname, inp, exp, part2):
+def run_test(tname, inp, exp, part2, debug):
     print("-"*30)
     print(f"Running {tname} for part {2 if part2 else 1}:")
-    sol = solve(inp, part2)
+    sol = solve(inp, part2, debug)
     if str(sol) != exp:
         print(colored(f"Wrong on {tname}!", 'red'))
         print(f"Expected {exp}")
@@ -25,7 +25,7 @@ def run_test(tname, inp, exp, part2):
         print(colored(f"Correct on {tname}!", 'green'))
         print(f"Got {sol}")
 
-def run_tests(part2):
+def run_tests(part2, debug):
     import glob
     tests = list(glob.glob("*.in"))
     for in_fn in tests:
@@ -37,13 +37,14 @@ def run_tests(part2):
         except:
             print(colored(f"No solution for {tname}, part {2 if part2 else 1}", 'red'))
             continue
-        run_test(tname, inp, exp, part2)
+        run_test(tname, inp, exp, part2, debug)
 
 def main(*argv):
+    debug = '--debug' in argv[0]
     if not '2' in argv[0]:
-        run_tests(False)
+        run_tests(False, debug)
     if not '1' in argv[0]:
-        run_tests(True)
+        run_tests(True, debug)
 
 if __name__ == "__main__":
     main(sys.argv)

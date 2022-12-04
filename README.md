@@ -28,6 +28,12 @@ aoct 1
 aoct 2
 ```
 
+If you want to filter the `stderr`, you can use the `--debug` flag which will propagate to your solution script where you can handle it.
+
+``` shell
+aoct --debug 1
+```
+
 ## Requirements
 For this program to work its magic, you must satisfy two requirements:
 1. Your solution script takes input from `stdin` and outputs solution to `stdout`.
@@ -50,7 +56,7 @@ if __name__ == "__main__":
     inp = sys.stdin.read().strip()
     
     # optional
-    if not 'test' in sys.argv:
+    if not '--debug' in sys.argv:
         ic.disable()
 
     if '2' not in sys.argv:
@@ -62,10 +68,11 @@ if __name__ == "__main__":
 Basically, `aoct` will invoke your solution script with two arguments: 
 problem part (`1` or `2`) and the argument `test`.
 
-By providing the `test` argument,
-`aoct` allows you to optimize your own program when you want to run it on the big input.
+There is a `--debug` flag
+that allows you to optimize your own program when you want to run it on a big input.
 For example, if you're using a logger,
-you can disable it if the argument isn't given 
+you can disable it for the big inputs
+by checking for `--debug` in the solution script,
 to avoid wasting performance on formatting those logs.
 
 Since `aoct` relies on the solution being returned through `stdin`, you can't do your usual [caveman debugging](https://medium.com/supernova-invention-park/the-caveman-debugging-ab8f7151415f) anymore. What you can do, though, and what `icecream` does, is print to `stderr` instead.
