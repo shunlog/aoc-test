@@ -11,7 +11,7 @@ def solve(inp, part2, debug):
                          stdin = subprocess.PIPE,
                          stdout = subprocess.PIPE)
     o, err = p.communicate(inp.encode('utf-8'))
-    return o.decode('utf-8').strip()
+    return o.decode('utf-8').rstrip()
 
 def run_test(tname, inp, exp, part2, debug):
     print("-"*30)
@@ -29,11 +29,11 @@ def run_tests(part2, debug):
     import glob
     tests = list(glob.glob("*.in"))
     for in_fn in tests:
-        inp = open(in_fn, 'r').read().strip()
+        inp = open(in_fn, 'r').read().rstrip()
         tname = in_fn.split('.')[0]
         out_fn = f'{tname}.{2 if part2 else 1}.out'
         try:
-            exp = open(out_fn, 'r').read().strip()
+            exp = open(out_fn, 'r').read().rstrip()
         except:
             print(colored(f"No solution for {tname}, part {2 if part2 else 1}", 'red'))
             continue
